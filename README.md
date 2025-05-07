@@ -10,12 +10,26 @@ Write a C program to convert a 23.65 into 25 using pointer
 
 ## PROGRAM:
 
+```
+ #include <stdio.h>
+ int main() {
+    double num = 23.65;
+    double *ptr;
+    
+    ptr = &num;
+    
+    *ptr = 25.0;
+    
+    printf("Modified value: %.2f\n", num);
+    
+    return 0;
+ }
+```
+
 ## OUTPUT:
  	
 
-
-
-
+![image](https://github.com/user-attachments/assets/89e31ae6-54b5-4b43-ab69-62b7dbaed8bd)
 
 
 
@@ -45,7 +59,31 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+
+```
+ #include <stdio.h>
+ unsigned long long calculateProduct(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return n * calculateProduct(n - 1);
+ }
+ int main() {
+    int n = 12;
+    unsigned long long product;
+    
+    product = calculateProduct(n);
+    
+    printf("The product of the first 12 natural numbers is: %llu\n", product);
+    
+    return 0;
+ }
+```
+
 ## OUTPUT:
+
+![image](https://github.com/user-attachments/assets/c0fc81d5-ae43-42d0-a064-80ebe7931208)
+
          		
 ## RESULT:
 
@@ -69,10 +107,29 @@ Write C Program to find Sum of each row of a Matrix
 
 ## PROGRAM:
 
-
+```
+#include <stdio.h>
+ unsigned long long calculateProduct(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return n * calculateProduct(n - 1);
+ }
+ int main() {
+    int n = 12;
+    unsigned long long product;
+    
+    product = calculateProduct(n);
+    
+    printf("The product of the first 12 natural numbers is: %llu\n", product);
+    
+    return 0;
+ }
+```
 
 ## OUTPUT
 
+![image](https://github.com/user-attachments/assets/027a730a-98e7-4f46-a473-19106eec1a68)
 
  
  
@@ -97,18 +154,43 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 
 ## PROGRAM:
 
+```
+ #include <stdio.h>
+ #include <string.h>
+ int main() {
+   char str[100];
+   int num_rows, i, j, len;
+   
+   printf("Enter a string: ");
+   scanf("%s", str);
+   
+   printf("Enter number of rows: ");
+   scanf("%d", &num_rows);
+   
+   len = strlen(str);
+   
+   for(i = 1; i <= num_rows; i++) {
+       for(j = 0; j < len; j++) {
+           printf("%c ", str[j]);
+       }
+       printf("\n");
+   }
+   
+   return 0;
+ }
+```
 
  ## OUTPUT
 
- 
+ ![image](https://github.com/user-attachments/assets/156fbe3f-aecc-4ee7-9dc2-23b935ceef83)
+
 
 ## RESULT
 
-Thus the C program to String process executed successfully
+Thus the C program to String process executed successfully.
  
 
  
-.
 
 
 
@@ -133,9 +215,34 @@ Step 6: End the program.
 
 ## PROGRAM
 
+```
+ #include <stdio.h>
+ int main() {
+    int i, n;
+    int arr[10];
+    int *parr = arr;
+    
+    printf("Enter number of elements (max 10): ");
+    scanf("%d", &n);
+    
+    printf("Enter %d elements:\n", n);
+    for(i = 0; i < n; i++) {
+        scanf("%d", (parr + i));
+    }
+    
+    printf("The array elements are:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", *(parr + i));
+    }
+    
+    return 0;
+ }
+```
+
 ## OUTPUT
 
- 
+ ![image](https://github.com/user-attachments/assets/1002882b-c5b9-40f9-8dcd-f666ef28f70c)
+
 
 ## RESULT
 
